@@ -193,13 +193,6 @@
             box-shadow: 0 10px 25px rgba(123, 154, 204, 0.08);
             transition: var(--transition);
             border-left: 6px solid var(--primary-color);
-            opacity: 0; 
-            transform: translateY(20px);
-        }
-
-        .seccion-card.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .seccion-header {
@@ -332,11 +325,11 @@
             display: block;
         }
 
-        /* --- ESTILO DE MINIATURAS HORIZONTALES (FORMA.PNG) --- */
+        /* --- ESTILO DE MINIATURAS HORIZONTALES (CENTRADAS) --- */
         .galeria-horizontal-container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center; /* Centra el bloque entero y su texto de ayuda */
             margin-top: 1.5rem;
             width: 100%;
         }
@@ -344,6 +337,7 @@
         .galeria-miniaturas {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center; /* Centra las imágenes dentro de la galería */
             gap: 12px;
             margin-bottom: 0.5rem;
         }
@@ -407,118 +401,6 @@
             border-top: 6px solid var(--accent-color);
         }
 
-        .reflexion-content {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            text-align: justify;
-        }
-
-        .quote-icon {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        /* --- MODAL REPARADO Y CAPAS DE PROTECCIÓN CONTRA EL FOOTER --- */
-        .modal-pdf {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            background-color: rgba(0, 0, 0, 0.93) !important; 
-            backdrop-filter: blur(8px) !important;
-            display: flex !important; 
-            justify-content: center;
-            align-items: center;
-            z-index: 999999999 !important; 
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .modal-pdf.active {
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-
-        .modal-content {
-            background-color: white;
-            width: 90%;
-            max-width: 950px;
-            height: 85vh;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            z-index: 1000000000 !important;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-pdf.active .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background-color: var(--accent-color);
-            color: #4a5157;
-            border: none;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            z-index: 1000000005 !important;
-            transition: var(--transition);
-        }
-
-        .modal-close:hover {
-            background-color: #ffb3c1;
-            transform: rotate(90deg);
-        }
-
-        .modal-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            padding-top: 60px; 
-            background-color: #f4f6f9;
-        }
-
-        .btn-back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: var(--secondary-color);
-            color: var(--text-light);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(191, 165, 230, 0.4);
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 999;
-        }
-
-        .btn-back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
         footer {
             background-color: #e6ecf5; 
             color: #74808c;
@@ -543,7 +425,6 @@
             .nav-container { flex-direction: column; gap: 1rem; }
             .hero-title { font-size: 2.4rem; }
             .container { padding-top: 130px; }
-            .modal-content { height: 75vh; }
         }
     </style>
 </head>
@@ -583,6 +464,7 @@
             
             <div class="secciones-grid">
                 
+                <!-- INDICADOR 1.1 -->
                 <article class="seccion-card">
                     <div class="seccion-header">
                         <i class="fa-solid fa-book-open-reader"></i>
@@ -620,6 +502,7 @@
                     </div>
                 </article>
 
+                <!-- INDICADOR 1.2 -->
                 <article class="seccion-card">
                     <div class="seccion-header">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -672,6 +555,7 @@
                     </div>
                 </article>
 
+                <!-- INDICADOR 2.1 -->
                 <article class="seccion-card">
                     <div class="seccion-header">
                         <i class="fa-solid fa-palette"></i>
@@ -683,7 +567,7 @@
                     </div>
                     
                     <div class="reflexion-indicador-box">
-                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> Evalue observando y escuchando con intención pedagógica y se comparte información con las familias para el acompañamiento en casa, esto me permite evaluar los avances. Presento un anecdotario que permite evidenciar el comportamiento de un estudiante, también el registro fotográficos de las experiencias, juego, exploración e interacción de los estudiantes y un ejemplo de rubrica que utilice para el proyecto de cuenta cuentos realizado por los padres de familia.
+                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> Evalue observando y escuchando con intención pedagógica y se comparte información con las familias para el acompañamiento en casa, esto me permite evaluar los avances. Presento un anecdotario que permite evidenciar el comportamiento de un estudiante, también el registro fotográficos de las experiencias, juego, exploration e interacción de los estudiantes y un ejemplo de rubrica que utilice para el proyecto de cuenta cuentos realizado por los padres de familia.
                     </div>
                     
                     <div class="evidencias-container">
@@ -695,8 +579,8 @@
                             <h4>Evidencia 2.1</h4>
                             <p>Clic para expandir documento</p>
                         </div>
-                        <div class="evidencias-container">
-                         <div class="galeria-horizontal-container">
+                        
+                        <div class="galeria-horizontal-container">
                             <div class="galeria-miniaturas">
                                 <div class="evidencia-item miniatura-item" data-img="img/f.jpeg">
                                     <img src="img/f.jpeg" alt="Actividad 1">
@@ -713,12 +597,14 @@
                                 <div class="evidencia-item miniatura-item" data-img="img/i.jpeg">
                                     <img src="img/i.jpeg" alt="Actividad 4">
                                     <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                                </div>
                             </div>
                             <p class="galeria-texto-ayuda">Clic para ampliar fotografías</p>
                         </div>
                     </div>
                 </article>
 
+                <!-- INDICADOR 3.1 -->
                 <article class="seccion-card">
                     <div class="seccion-header">
                         <i class="fa-solid fa-graduation-cap"></i>
@@ -734,7 +620,7 @@
                     </div>
                     
                     <div class="evidencias-container">
-                         <div class="galeria-horizontal-container">
+                        <div class="galeria-horizontal-container">
                             <div class="galeria-miniaturas">
                                 <div class="evidencia-item miniatura-item" data-img="img/A.jpeg">
                                     <img src="img/A.jpeg" alt="Actividad 1">
@@ -752,121 +638,19 @@
                                     <img src="img/D.jpeg" alt="Actividad 4">
                                     <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
                                 </div>
-                                <div class="evidencia-item miniatura-item" data-img="img/E.jpeg">
-                                    <img src="img/E.jpeg" alt="Actividad 5">
-                                    <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
-                                </div>
+                            </div>
                             <p class="galeria-texto-ayuda">Clic para ampliar fotografías</p>
                         </div>
                     </div>
                 </article>
-
+                
             </div>
         </section>
-
-        <section id="reflexion" class="reflexion-section">
-            <h2 class="section-title">Apartado de Reflexión Final</h2>
-            <div class="reflexion-content">
-                <i class="fa-solid fa-quote-left quote-icon"></i>
-                <p>El Módulo 5 ha representado un espacio fundamental para consolidar la práctica pedagógica en la Educación Parvularia, articulando las directrices teóricas del nuevo enfoque curricular con la realidad del aula. A través de la elaboración y el análisis minucioso de cada herramienta —desde el diagnóstico inicial continuo hasta el diseño estructurado de planificaciones e instrumentos de evaluación inclusivos— ha quedado demostrada la importancia de concebir al niño como el centro de los procesos de desarrollo y aprendizaje.</p>
-                <br>
-                <p>El vínculo estratégico y empático establecido con las familias ha evidenciado que la corresponsabilidad escolar no es meramente administrativa, sino una red de apoyo imprescindible para potenciar el bienestar integral de la primera infancia en El Salvador. Este portafolio digital condensa un ejercicio crítico y transformador de docencia, enfocado en asegurar una educación lúdica, equitativa, accesible y de alta calidad pedagógica.</p>
-            </div>
-        </section>
-
     </main>
 
-    <div class="modal-pdf" id="pdfModal">
-        <div class="modal-content">
-            <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
-            <iframe class="modal-iframe" id="modalIframe" src=""></iframe>
-            <img id="modalImg" src="" style="max-width: 95%; max-height: 80vh; object-fit: contain; display: none; margin: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-        </div>
-    </div>
-
-    <a href="#inicio" class="btn-back-to-top" id="backToTop" title="Volver al inicio">
-        <i class="fa-solid fa-chevron-up"></i>
-    </a>
-
     <footer>
-        <p>&copy; 2026 - Portafolio Académico | Desarrollado para Fátima Estefany de Vilanova</p>
+        <p>&copy; 2026 - Portafolio Pedagógico de Educación Parvularia</p>
     </footer>
 
-    <script>
-        const modal = document.getElementById('pdfModal');
-        const modalIframe = document.getElementById('modalIframe');
-        const modalImg = document.getElementById('modalImg');
-        const closeModalBtn = document.getElementById('closeModal');
-        const evidenciaItems = document.querySelectorAll('.evidencia-item');
-        const footerElement = document.querySelector('footer');
-
-        evidenciaItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const pdfUrl = item.getAttribute('data-pdf');
-                const imgUrl = item.getAttribute('data-img');
-                
-                if (pdfUrl) {
-                    modalIframe.src = pdfUrl;
-                    modalIframe.style.display = 'block';
-                    modalImg.style.display = 'none';
-                    
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                    if (footerElement) footerElement.style.setProperty('display', 'none', 'important');
-                } else if (imgUrl) {
-                    modalImg.src = imgUrl;
-                    modalImg.style.display = 'block';
-                    modalIframe.style.display = 'none';
-                    
-                    modal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                    if (footerElement) footerElement.style.setProperty('display', 'none', 'important');
-                }
-            });
-        });
-
-        const cerrarModal = () => {
-            modal.classList.remove('active');
-            setTimeout(() => {
-                modalIframe.src = ''; 
-                modalImg.src = '';
-                modalIframe.style.display = 'none';
-                modalImg.style.display = 'none';
-            }, 300);
-            
-            document.body.style.overflow = ''; 
-            if (footerElement) footerElement.style.setProperty('display', 'block', 'important');
-        };
-
-        closeModalBtn.addEventListener('click', cerrarModal);
-        
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) cerrarModal();
-        });
-
-        // Animación suave de aparición al hacer scroll
-        const backToTopButton = document.getElementById('backToTop');
-        const tarjetas = document.querySelectorAll('.seccion-card');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-
-        const aparecerAlScroll = () => {
-            tarjetas.forEach(tarjeta => {
-                const tarjetaTop = tarjeta.getBoundingClientRect().top;
-                if (tarjetaTop < window.innerHeight / 1.2) {
-                    tarjeta.classList.add('visible');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', aparecerAlScroll);
-        window.addEventListener('load', aparecerAlScroll);
-    </script>
 </body>
 </html>
