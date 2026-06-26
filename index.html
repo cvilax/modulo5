@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Final - Fátima Estefany de Vilanova</title>
+    <title>Portafolio Modulo 5 - Fátima Estefany de Vilanova</title>
     <!-- Iconos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -453,44 +453,36 @@
         }
 
         /* --- VENTANA FLOTANTE / MODAL --- */
-       .modal-pdf {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85) !important; /* Fondo más oscuro para tapar todo */
-            backdrop-filter: blur(6px) !important;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 999999 !important; /* Un número extremadamente alto y con ¡important */
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .modal-pdf.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background-color: white;
-            width: 90%;
-            max-width: 950px;
-            height: 85vh;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            transform: scale(0.9);
-            transition: var(--transition);
-        }
-
-        .modal-pdf.active .modal-content {
-            transform: scale(1);
-        }
+                   .modal-pdf {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100vw !important; /* Fuerza el ancho completo de la pantalla */
+                height: 100vh !important; /* Fuerza la altura completa de la pantalla */
+                background-color: rgba(0, 0, 0, 0.9) !important; /* Fondo negro sólido para bloquear el fondo */
+                backdrop-filter: blur(8px) !important;
+                display: none; /* Cambiamos a 'none' para manejarlo limpiamente con JS */
+                justify-content: center;
+                align-items: center;
+                z-index: 999999999 !important; /* Capa suprema sobre toda la web */
+            }
+            
+            /* Cuando el modal se activa, se muestra como un flexbox centrado */
+            .modal-pdf.active {
+                display: flex !important;
+            }
+            
+            .modal-content {
+                background-color: white;
+                width: 90%;
+                max-width: 1000px;
+                height: 85vh;
+                border-radius: 16px;
+                overflow: hidden;
+                position: relative;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+                z-index: 1000000000 !important;
+            }
 
         .modal-close {
             position: absolute;
@@ -694,42 +686,36 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
                             <h4>Evidencia 2.1</h4>
                             <p>Clic para expandir documento</p>
                         </div>
-                            <!-- CONTENEDOR ESTILO GALERÍA HORIZONTAL (BASADO EN FORMA.PNG) -->
-                                <div class="galeria-horizontal-container">
-                                    
-                                    <div class="galeria-miniaturas">
-                                        <!-- Foto 1 -->
-                                        <div class="evidencia-item miniatura-item" data-img="img/actividad1.jpg">
-                                            <img src="img/1.jpeg" alt="Actividad de Parvularia 1">
-                                            <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
-                                        </div>
-                                
-                                        <!-- Foto 2 -->
-                                        <div class="evidencia-item miniatura-item" data-img="img/actividad2.jpg">
-                                            <img src="img/2.jpeg" alt="Actividad de Parvularia 2">
-                                            <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
-                                        </div>
-                                
-                                        <!-- Foto 3 -->
-                                        <div class="evidencia-item miniatura-item" data-img="img/actividad3.jpg">
-                                            <img src="img/3.jpeg" alt="Actividad de Parvularia 3">
-                                            <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
-                                        </div>
-                                         <!-- Foto 4 -->
-                                        <div class="evidencia-item miniatura-item" data-img="img/actividad3.jpg">
-                                            <img src="img/4.jpeg" alt="Actividad de Parvularia 3">
-                                            <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
-                                        </div>
-                                         <!-- Foto 5 -->
-                                        <div class="evidencia-item miniatura-item" data-img="img/actividad3.jpg">
-                                            <img src="img/5.jpeg" alt="Actividad de Parvularia 3">
-                                            <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Texto único debajo de las miniaturas -->
-                                    <p class="galeria-texto-ayuda">Clic para ampliar fotografías</p>
-                                </div>
+                    <div class="galeria-horizontal-container">
+                        
+                        <div class="galeria-miniaturas">
+                            <div class="evidencia-item miniatura-item" data-img="img/1.jpeg">
+                                <img src="img/1.jpeg" alt="Actividad de Parvularia 1">
+                                <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                            </div>
+                    
+                            <div class="evidencia-item miniatura-item" data-img="img/2.jpeg">
+                                <img src="img/2.jpeg" alt="Actividad de Parvularia 2">
+                                <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                            </div>
+                    
+                            <div class="evidencia-item miniatura-item" data-img="img/3.jpeg">
+                                <img src="img/3.jpeg" alt="Actividad de Parvularia 3">
+                                <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                            </div>
+
+                            <div class="evidencia-item miniatura-item" data-img="img/4.jpeg">
+                                <img src="img/4.jpeg" alt="Actividad de Parvularia 4">
+                                <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                            </div>
+
+                            <div class="evidencia-item miniatura-item" data-img="img/5.jpeg">
+                                <img src="img/5.jpeg" alt="Actividad de Parvularia 5">
+                                <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                            </div>
+                            
+                        </div> <p class="galeria-texto-ayuda">Clic para ampliar fotografías</p>
+                    </div> 
                     </div>
                 </article>
 
@@ -825,14 +811,13 @@ Como docente, reafirmo mi compromiso de continuar promoviendo experiencias de ap
 
     
    <!-- VENTANA MODAL FLOTANTE MULTIMEDIA (PDF E IMÁGENES) -->
-    <div class="modal-pdf" id="pdfModal">
-    <div class="modal-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
-        <!-- Visor para cuando sea PDF -->
-        <iframe class="modal-iframe" id="modalIframe" src="" style="width:100%; height:100%;"></iframe>
-        <!-- Visor para cuando sea Imagen -->
-        <img class="modal-img-content" id="modalImg" src="" alt="Evidencia ampliada">
-    </div
+ <div class="modal-pdf" id="pdfModal" style="position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; z-index: 99999999 !important;">
+    <div class="modal-content" style="position: relative; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.9); width: 90%; max-width: 950px; height: 85vh; border-radius: 16px; overflow: hidden; z-index: 100000000 !important;">
+        <button class="modal-close" id="closeModal" style="position: absolute; top: 15px; right: 20px; z-index: 100000002 !important;"><i class="fa-solid fa-xmark"></i></button>
+        <iframe class="modal-iframe" id="modalIframe" src="" style="width: 100%; height: 100%; border: none; padding-top: 60px; background-color: #f4f6f9; display: none;"></iframe>
+        <img id="modalImg" src="" style="max-width: 95%; max-height: 80vh; object-fit: contain; display: none; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    </div>
+</div>
 
     <!-- BOTÓN VOLVER ARRIBA -->
     <a href="#inicio" class="btn-back-to-top" id="backToTop" title="Volver al inicio">
@@ -845,69 +830,52 @@ Como docente, reafirmo mi compromiso de continuar promoviendo experiencias de ap
 
     <!-- INTERACCIONES (JAVASCRIPT) -->
     <script>
-      const modal = document.getElementById('pdfModal');
-const modalIframe = document.getElementById('modalIframe');
-const modalImg = document.getElementById('modalImg');
-const closeModalBtn = document.getElementById('closeModal');
-const evidenciaItems = document.querySelectorAll('.evidencia-item');
-
-evidenciaItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const pdfUrl = item.getAttribute('data-pdf');
-        const imgUrl = item.getAttribute('data-img');
-        
-        if (pdfUrl) {
-            // Si tiene PDF, muestra el iframe y oculta la imagen
-            modalImg.style.display = 'none';
-            modalIframe.style.display = 'block';
-            modalIframe.src = pdfUrl;
-        } else if (imgUrl) {
-            // Si tiene Imagen, muestra la imagen y oculta el iframe
-            modalIframe.style.display = 'none';
-            modalIframe.src = '';
-            modalImg.style.display = 'block';
-            modalImg.src = imgUrl;
-        }
-        
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; 
-    });
-});
-
-const cerrarModal = () => {
-    modal.classList.remove('active');
-    modalIframe.src = ''; 
-    modalImg.src = '';
-    document.body.style.overflow = ''; 
-};
-
-closeModalBtn.addEventListener('click', cerrarModal);
-modal.addEventListener('click', (e) => {
-    if(e.target === modal) cerrarModal();
-});
-
-const backToTopButton = document.getElementById('backToTop');
-const tarjetas = document.querySelectorAll('.seccion-card');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('show');
-    } else {
-        backToTopButton.classList.remove('show');
-    }
-});
-
-const aparecerAlScroll = () => {
-    tarjetas.forEach(tarjeta => {
-        const tarjetaTop = tarjeta.getBoundingClientRect().top;
-        if (tarjetaTop < window.innerHeight / 1.2) {
-            tarjeta.classList.add('visible');
-        }
-    });
-};
-
-window.addEventListener('scroll', aparecerAlScroll);
-window.addEventListener('load', aparecerAlScroll);
+            const modal = document.getElementById('pdfModal');
+            const modalIframe = document.getElementById('modalIframe');
+            const modalImg = document.getElementById('modalImg');
+            const closeModalBtn = document.getElementById('closeModal');
+            const evidenciaItems = document.querySelectorAll('.evidencia-item');
+            
+            evidenciaItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const pdfUrl = item.getAttribute('data-pdf');
+                    const imgUrl = item.getAttribute('data-img');
+                    
+                    if (pdfUrl) {
+                        modalIframe.src = pdfUrl;
+                        modalIframe.style.display = 'block';
+                        modalImg.style.display = 'none';
+                        
+                        // Activar modal
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Evita que la página de fondo se mueva
+                    } else if (imgUrl) {
+                        modalImg.src = imgUrl;
+                        modalImg.style.display = 'block';
+                        modalIframe.style.display = 'none';
+                        
+                        // Activar modal
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Evita que la página de fondo se mueva
+                    }
+                });
+            });
+            
+            const cerrarModal = () => {
+                modal.classList.remove('active');
+                modalIframe.src = ''; 
+                modalImg.src = '';
+                document.body.style.overflow = ''; // Devuelve el scroll normal a la página
+            };
+            
+            closeModalBtn.addEventListener('click', cerrarModal);
+            
+            // Cerrar también si hacen clic en el fondo negro
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    cerrarModal();
+                }
+            });
     </script>
 </body>
 </html>
