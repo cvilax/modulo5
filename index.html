@@ -298,6 +298,71 @@
             padding-top: 20px;
         }
 
+                /* --- ESTILO DE MINIATURAS HORIZONTALES (FORMA.PNG) --- */
+        .galeria-horizontal-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinea al inicio como en la imagen */
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+        
+        .galeria-miniaturas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px; /* Espacio entre cada recuadro */
+            margin-bottom: 0.5rem;
+        }
+        
+        .miniatura-item {
+            width: 80px;         /* Ancho compacto para los recuadros */
+            height: 110px;       /* Altura vertical simulando la forma de la imagen */
+            border: 2px solid #000000; /* Borde marcado como en tu boceto */
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            padding: 0 !important; /* Elimina el padding de la clase evidencia-item original */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .miniatura-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .miniatura-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hace que la foto se adapte perfectamente al recuadro */
+        }
+        
+        /* Efecto hover suave con icono */
+        .miniatura-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(123, 154, 204, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .miniatura-item:hover .miniatura-overlay {
+            opacity: 1;
+        }
+        
+        .galeria-texto-ayuda {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 2px;
+            font-weight: 500;
+        }
         /* --- OPTIMIZACIÓN PARA EL CONTENEDOR DE VIDEO --- */
         .video-item {
             cursor: default !important;
@@ -389,21 +454,21 @@
 
         /* --- VENTANA FLOTANTE / MODAL --- */
         .modal-pdf {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75); /* Un fondo un poco más oscuro resalta más el PDF */
+        backdrop-filter: blur(4px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99999 !important; /* <--- CAMBIA ESTO A 99999 PARA PASAR AL FRENTE */
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+    }
 
         .modal-pdf.active {
             opacity: 1;
