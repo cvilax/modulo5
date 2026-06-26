@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Modulo 5 - Fátima Estefany de Vilanova</title>
-    <!-- Iconos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -125,7 +124,6 @@
             font-weight: 500;
         }
 
-        /* Bloque de Introducción Breve */
         .hero-introduction {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
@@ -221,7 +219,6 @@
             color: var(--text-dark);
         }
 
-        /* Bloque del Indicador */
         .indicador-box {
             background-color: #f7f4fc; 
             padding: 1.2rem;
@@ -230,25 +227,23 @@
             border-left: 4px solid var(--secondary-color);
         }
 
-        /* Nuevo Bloque de Reflexión Corta por Indicador */
         .reflexion-indicador-box {
-            background-color: #fffaf0; /* Tono cálido pastel muy suave */
+            background-color: #fffaf0; 
             padding: 1.2rem;
             border-radius: 12px;
             margin-bottom: 1.5rem;
-            border-left: 4px solid #fbd38d; /* Naranja pastel suave para diferenciarlo */
+            border-left: 4px solid #fbd38d; 
             font-size: 0.95rem;
             line-height: 1.6;
         }
 
         .evidencias-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2rem;
             margin-top: 1.5rem;
         }
 
-        /* Tarjeta Interactiva del PDF */
         .evidencia-item {
             border: 2px dashed #e2e8f0;
             border-radius: 14px;
@@ -280,116 +275,6 @@
             border: 1px solid #cbd5e1;
         }
 
-        /* --- CONFIGURACIÓN DE IMÁGENES EN LAS EVIDENCIAS --- */
-        .img-preview {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Hace que la foto llene el recuadro perfectamente sin deformarse */
-            border-radius: 8px;
-        }
-
-        /* Ajuste para que la imagen en el modal se vea gigante y centrada */
-        .modal-img-content {
-            max-width: 100%;
-            max-height: 80vh;
-            display: none;
-            margin: auto;
-            object-fit: contain;
-            padding-top: 20px;
-        }
-
-                /* --- ESTILO DE MINIATURAS HORIZONTALES (FORMA.PNG) --- */
-        .galeria-horizontal-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Alinea al inicio como en la imagen */
-            margin-top: 1.5rem;
-            width: 100%;
-        }
-        
-        .galeria-miniaturas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px; /* Espacio entre cada recuadro */
-            margin-bottom: 0.5rem;
-        }
-        
-        .miniatura-item {
-            width: 80px;         /* Ancho compacto para los recuadros */
-            height: 110px;       /* Altura vertical simulando la forma de la imagen */
-            border: 2px solid #000000; /* Borde marcado como en tu boceto */
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            padding: 0 !important; /* Elimina el padding de la clase evidencia-item original */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .miniatura-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        
-        .miniatura-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Hace que la foto se adapte perfectamente al recuadro */
-        }
-        
-        /* Efecto hover suave con icono */
-        .miniatura-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(123, 154, 204, 0.4);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-        
-        .miniatura-item:hover .miniatura-overlay {
-            opacity: 1;
-        }
-        
-        .galeria-texto-ayuda {
-            font-size: 0.85rem;
-            color: #64748b;
-            margin-top: 2px;
-            font-weight: 500;
-        }
-        /* --- OPTIMIZACIÓN PARA EL CONTENEDOR DE VIDEO --- */
-        .video-item {
-            cursor: default !important;
-            border-style: solid !important;
-            width: 100%;
-            max-width: 750px;
-            margin: 0 auto;
-        }
-        
-        .video-preview-container {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9;
-            background-color: #1a202c; /* Fondo oscuro elegante para el reproductor */
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
-        }
-        
-        .video-preview-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-
         .pdf-preview-container iframe {
             width: 100%;
             height: 100%;
@@ -418,15 +303,98 @@
             background-color: rgba(123, 154, 204, 0.6);
         }
 
-        .evidencia-item h4 {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 0.2rem;
+        /* --- ESTILO SECCIÓN DE VIDEO AISLADA --- */
+        .video-seccion-container {
+            background-color: #fafbfc;
+            border: 2px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 1.2rem;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 1.5rem;
+        }
+        
+        .video-preview-container {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            background-color: #1a202c; 
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .video-preview-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
-        .evidencia-item p {
+        /* --- ESTILO DE MINIATURAS HORIZONTALES (FORMA.PNG) --- */
+        .galeria-horizontal-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+        
+        .galeria-miniaturas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .miniatura-item {
+            width: 80px;         
+            height: 110px;       
+            border: 2px solid #4a5157; 
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            padding: 0 !important; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .miniatura-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .miniatura-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .miniatura-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(123, 154, 204, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .miniatura-item:hover .miniatura-overlay {
+            opacity: 1;
+        }
+        
+        .galeria-texto-ayuda {
             font-size: 0.85rem;
-            opacity: 0.8;
+            color: #64748b;
+            margin-top: 2px;
+            font-weight: 500;
         }
 
         /* --- SECCIÓN REFLEXIÓN FINAL --- */
@@ -452,37 +420,46 @@
             display: block;
         }
 
-        /* --- VENTANA FLOTANTE / MODAL --- */
-                   .modal-pdf {
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                width: 100vw !important; /* Fuerza el ancho completo de la pantalla */
-                height: 100vh !important; /* Fuerza la altura completa de la pantalla */
-                background-color: rgba(0, 0, 0, 0.9) !important; /* Fondo negro sólido para bloquear el fondo */
-                backdrop-filter: blur(8px) !important;
-                display: none; /* Cambiamos a 'none' para manejarlo limpiamente con JS */
-                justify-content: center;
-                align-items: center;
-                z-index: 999999999 !important; /* Capa suprema sobre toda la web */
-            }
-            
-            /* Cuando el modal se activa, se muestra como un flexbox centrado */
-            .modal-pdf.active {
-                display: flex !important;
-            }
-            
-            .modal-content {
-                background-color: white;
-                width: 90%;
-                max-width: 1000px;
-                height: 85vh;
-                border-radius: 16px;
-                overflow: hidden;
-                position: relative;
-                box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-                z-index: 1000000000 !important;
-            }
+        /* --- MODAL REPARADO Y CAPAS DE PROTECCIÓN CONTRA EL FOOTER --- */
+        .modal-pdf {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: rgba(0, 0, 0, 0.93) !important; 
+            backdrop-filter: blur(8px) !important;
+            display: flex !important; 
+            justify-content: center;
+            align-items: center;
+            z-index: 999999999 !important; 
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-pdf.active {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 950px;
+            height: 85vh;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            z-index: 1000000000 !important;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-pdf.active .modal-content {
+            transform: scale(1);
+        }
 
         .modal-close {
             position: absolute;
@@ -500,7 +477,7 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            z-index: 10;
+            z-index: 1000000005 !important;
             transition: var(--transition);
         }
 
@@ -517,7 +494,6 @@
             background-color: #f4f6f9;
         }
 
-        /* --- BOTÓN VOLVER ARRIBA --- */
         .btn-back-to-top {
             position: fixed;
             bottom: 2rem;
@@ -543,7 +519,6 @@
             visibility: visible;
         }
 
-        /* --- FOOTER --- */
         footer {
             background-color: #e6ecf5; 
             color: #74808c;
@@ -552,7 +527,7 @@
             margin-top: 6rem;
             font-size: 0.95rem;
             position: relative !important;
-            z-index: 1 !important; /* Forzamos al footer a quedarse en la capa más baja */
+            z-index: 1 !important; 
         }
 
         @keyframes fadeInUp {
@@ -574,7 +549,6 @@
 </head>
 <body>
 
-    <!-- BARRA DE NAVEGACIÓN -->
     <header>
         <nav class="nav-container">
             <div class="logo">
@@ -588,47 +562,39 @@
         </nav>
     </header>
 
-    <!-- SECCIÓN HERO -->
     <section id="inicio" class="hero">
         <span class="hero-subtitle">Módulo 5</span>
         <h1 class="hero-title">Fátima Estefany de Vilanova</h1>
         <p class="hero-tagline">Presentación de evidencias de desarrollo, indicadores de logro y reflexión del aprendizaje del módulo.</p>
         
-        <!-- ESPACIO DE INTRODUCCIÓN BREVE -->
         <div class="hero-introduction">
             <strong>Introducción:</strong> <br>
-            El presente portafolio reúne evidencias del trabajo docente desarrollado en Educación Parvularia, en concordancia con el nuevo Marco Curricular de la Primera Infancia. En él se documentan los procesos de diagnóstico inicial, planificación pedagógica, evaluación del desarrollo y aprendizaje, así como las adecuaciones curriculares implementadas para responder a las características, intereses, capacidades y necesidades de cada niño, promoviendo una educación inclusiva, accesible y equitativa. <br>
-
-Asimismo, se evidencian las estrategias de comunicación y colaboración permanente con las familias y el equipo docente, fortaleciendo la corresponsabilidad en el proceso educativo. En conjunto, las evidencias reflejan una práctica pedagógica orientada al desarrollo integral de los niños, mediante experiencias de aprendizaje significativas y pertinentes.
+            El presente portafolio reúne evidencias del trabajo docente desarrollado en Educación Parvularia, en concordancia con el nuevo Marco Curricular de la Primera Infancia. En él se documentan los procesos de diagnóstico inicial, planificación pedagógica, evaluación del desarrollo y aprendizaje, así como las adecuaciones curriculares implementadas para responder a las características, intereses, capacidades y necesidades de cada niño, promoviendo una educación inclusiva, accesible y equitativa. <br><br>
+            Asimismo, se evidencian las estrategias de comunicación y colaboración permanente con las familias y el equipo docente, fortaleciendo la corresponsabilidad en el proceso educativo. En conjunto, las evidencias reflejan una práctica pedagógica orientada al desarrollo integral de los niños, mediante experiencias de aprendizaje significativas y pertinentes.
         </div>
         
         <a href="#secciones" class="btn-start">Explorar Portafolio <i class="fa-solid fa-heart" style="margin-left: 8px; color: var(--accent-color);"></i></a>
     </section>
 
-    <!-- CONTENIDO PRINCIPAL -->
     <main class="container">
         
-        <!-- SECCIÓN DE EVIDENCIAS -->
         <section id="secciones">
             <h2 class="section-title">Secciones del Módulo: Indicadores y evidencias</h2>
             
             <div class="secciones-grid">
                 
-                <!-- SECCIÓN 1 -->
                 <article class="seccion-card">
                     <div class="seccion-header">
                         <i class="fa-solid fa-book-open-reader"></i>
                         <h3>Indicador 1</h3>
                     </div>
                     
-                    <!-- Indicador -->
                     <div class="indicador-box">
                         <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong> 1.1. Elaborar y utilizar el expediente de los niños, realizando un diagnóstico inicial que caracteriza, con base en sus particularidades: intereses, capacidades y contextos, empleando herramientas y estrategias accesibles y equitativas para fundamentar la planificación de experiencias pedagógicas que promuevan el desarrollo y aprendizaje de todos los niños, en colaboración con las familias y el equipo docente.
                     </div>
                     
-                    <!-- Reflexión sobre el indicador -->
                     <div class="reflexion-indicador-box">
-                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> En este modulo aprendí a consolidar muchos aspectos, como lo es el diagnostico al inicio de año para comprender como entran los niños al nivel escolar en este caso su primera vez. La caracterización individual y grupal que se realiza al inicio para reconocer al grupo y a cada niño, debe ser continua, esto me permitió desarrollar actividades en las 2 semanas de adaptación, mi punto de partida para poder realizar los procesos de desarrollo, las estrategias, recursos. Todos esos documentos me han servido para crear el expediente de cada estudiante con información relevante como la ficha de matricula, cartilla de vacunación,  Dui de responsables, contexto familiar.
+                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> En este modulo aprendí a consolidar muchos aspectos, como lo es el diagnostico al inicio de año para comprender como entran los niños al nivel escolar en este caso su primera vez. La caracterización individual y grupal que se realiza al inicio para reconocer al grupo y a cada niño, debe ser continua, esto me permitió desarrollar actividades en las 2 semanas de adaptación, mi punto de partida para poder realizar los procesos de desarrollo, las estrategias, recursos. Todos esos documentos me han servido para crear el expediente de cada estudiante con información relevante como la ficha de matricula, cartilla de vacunación, Dui de responsables, contexto familiar.
                     </div>
                     
                     <div class="evidencias-container">
@@ -640,41 +606,32 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
                             <h4>Evidencia 1.1</h4>
                             <p>Clic para expandir documento</p>
                         </div>
-                    <div class="evidencias-container" style="grid-template-columns: 1fr;">
-    
-                    <!-- CONTENEDOR DE VIDEO OPTIMIZADO -->
-                    
-                        <div class="video-preview-container">
-                            
-                            <video controls>
-                                <source src="video/expediente.mp4" type="video/mp4">
-                                Tu navegador no soporta la reproducción de video.
-                            </video>
-                        </div>
-                        <h4 style="margin-top: 1.2rem;">Expediente de estudiante</h4>
                         
-                    </div>
-                
-                </div>
-                
+                        <div class="video-item video-seccion-container">
+                            <div class="video-preview-container">
+                                <video controls>
+                                    <source src="video/expediente.mp4" type="video/mp4">
+                                    Tu navegador no soporta la reproducción de video.
+                                </video>
+                            </div>
+                            <h4 style="margin-top: 1.2rem;">Expediente de estudiante</h4>
+                            <p>Utiliza los controles multimedia</p>
+                        </div>
                     </div>
                 </article>
 
-                <!-- SECCIÓN 2 -->
                 <article class="seccion-card">
                     <div class="seccion-header">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        <h3>Indicador 1.2:</h3>
+                        <h3>Indicador 1.2</h3>
                     </div>
                     
-                    <!-- Indicador -->
                     <div class="indicador-box">
-                        <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong>1.2. Diseñar e implementar la planificación a largo, mediano (jornalización) y corto plazo (planificación semanal), alineada con el nuevo Marco Curricular de la Primera Infancia, basada en la caracterización de niños de Primera Infancia e integrando procesos de desarrollo y aprendizaje que garanticen entornos accesibles y equitativos, utilizando múltiples formas de representación, expresión y motivación para promover la participación activa, en colaboración con las familias y el equipo docente.
+                        <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong> 1.2. Diseñar e implementar la planificación a largo, mediano (jornalización) y corto plazo (planificación semanal), alineada con el nuevo Marco Curricular de la Primera Infancia, basada en la caracterización de niños de Primera Infancia e integrando procesos de desarrollo y aprendizaje que garanticen entornos accesibles y equitativos, utilizando múltiples formas de representación, expression y motivación para promover la participación activa, en colaboración con las familias y el equipo docente.
                     </div>
                     
-                    <!-- Reflexión sobre el indicador -->
                     <div class="reflexion-indicador-box">
-                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> Para poder iniciar con mi jornalizacion de este año tome en consideración el calendario escolar y las fechas institucionales, luego di prioridad a las características individuales de cada estudiante para poder realizar mi planificación semanal, utilice los programas de desarrollo y aprendizaje de Parvularia 4,  los 5 ámbitos de experiencia con sus núcleos pedagógicos, los descriptores de progresión, para los procesos de desarrollo y aprendizaje. El eje central es el juego promoviendo el uso de las zonas de desarrollo, talleres y proyectos, logrando planificar la rutina diaria, anticipando los materiales y apoyos diferenciados.
+                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> Para poder iniciar con mi jornalizacion de este año tome en consideración el calendario escolar y las fechas institucionales, luego di prioridad a las características individuales de cada estudiante para poder realizar mi planificación semanal, utilice los programas de desarrollo y aprendizaje de Parvularia 4, los 5 ámbitos de experiencia con sus núcleos pedagógicos, los descriptores de progresión, para los procesos de desarrollo y aprendizaje. El eje central es el juego promoviendo el uso de las zonas de desarrollo, talleres y proyectos, logrando planificar la rutina diaria, anticipando los materiales y apoyos diferenciados.
                     </div>
                     
                     <div class="evidencias-container">
@@ -686,52 +643,45 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
                             <h4>Evidencia 2.1</h4>
                             <p>Clic para expandir documento</p>
                         </div>
-                    <div class="galeria-horizontal-container">
                         
-                        <div class="galeria-miniaturas">
-                            <div class="evidencia-item miniatura-item" data-img="img/1.jpeg">
-                                <img src="img/1.jpeg" alt="Actividad de Parvularia 1">
-                                <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                        <div class="galeria-horizontal-container">
+                            <div class="galeria-miniaturas">
+                                <div class="evidencia-item miniatura-item" data-img="img/1.jpeg">
+                                    <img src="img/1.jpeg" alt="Actividad 1">
+                                    <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                                </div>
+                                <div class="evidencia-item miniatura-item" data-img="img/2.jpeg">
+                                    <img src="img/2.jpeg" alt="Actividad 2">
+                                    <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                                </div>
+                                <div class="evidencia-item miniatura-item" data-img="img/3.jpeg">
+                                    <img src="img/3.jpeg" alt="Actividad 3">
+                                    <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                                </div>
+                                <div class="evidencia-item miniatura-item" data-img="img/4.jpeg">
+                                    <img src="img/4.jpeg" alt="Actividad 4">
+                                    <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                                </div>
+                                <div class="evidencia-item miniatura-item" data-img="img/5.jpeg">
+                                    <img src="img/5.jpeg" alt="Actividad 5">
+                                    <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
+                                </div>
                             </div>
-                    
-                            <div class="evidencia-item miniatura-item" data-img="img/2.jpeg">
-                                <img src="img/2.jpeg" alt="Actividad de Parvularia 2">
-                                <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
-                            </div>
-                    
-                            <div class="evidencia-item miniatura-item" data-img="img/3.jpeg">
-                                <img src="img/3.jpeg" alt="Actividad de Parvularia 3">
-                                <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
-                            </div>
-
-                            <div class="evidencia-item miniatura-item" data-img="img/4.jpeg">
-                                <img src="img/4.jpeg" alt="Actividad de Parvularia 4">
-                                <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
-                            </div>
-
-                            <div class="evidencia-item miniatura-item" data-img="img/5.jpeg">
-                                <img src="img/5.jpeg" alt="Actividad de Parvularia 5">
-                                <div class="miniatura-overlay"><i class="fa-solid fa-camera"></i></div>
-                            </div>
-                            
-                        </div> <p class="galeria-texto-ayuda">Clic para ampliar fotografías</p>
-                    </div> 
+                            <p class="galeria-texto-ayuda">Clic para ampliar fotografías</p>
+                        </div>
                     </div>
                 </article>
 
-                <!-- SECCIÓN 3 -->
                 <article class="seccion-card">
                     <div class="seccion-header">
                         <i class="fa-solid fa-palette"></i>
-                        <h3>Indicador 2.1 </h3>
+                        <h3>Indicador 2.1</h3>
                     </div>
                     
-                    <!-- Indicador -->
                     <div class="indicador-box">
                         <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong> 2.1. Implementar procesos de evaluación del desarrollo y aprendizaje en los niños de la Primera Infancia a partir de los descriptores de progresión, en los que utilice mecanismos e instrumentos de valoración con intencionalidad pedagógica, y en los que registre y analice el progreso de manera sistemática y flexible en momentos clave; y, asimismo, lleve a cabo adecuaciones curriculares inclusivas y equitativas.
                     </div>
                     
-                    <!-- Reflexión sobre el indicador -->
                     <div class="reflexion-indicador-box">
                         <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> Evalue observando y escuchando con intención pedagógica y se comparte información con las familias para el acompañamiento en casa, esto me permite evaluar los avances. Presento un anecdotario que permite evidenciar el comportamiento de un estudiante, también el registro fotográficos de las experiencias, juego, exploración e interacción de los estudiantes y un ejemplo de rubrica que utilice para el proyecto de cuenta cuentos realizado por los padres de familia.
                     </div>
@@ -756,19 +706,16 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
                     </div>
                 </article>
 
-                <!-- SECCIÓN 4 -->
                 <article class="seccion-card">
                     <div class="seccion-header">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <h3>Indicador 3.1</h3>
                     </div>
                     
-                    <!-- Indicador -->
                     <div class="indicador-box">
                         <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong> 3.1 Diseñar estrategias de colaboración, orientación y comunicación abierta y permanente con las familias, mediante el acompañamiento docente (entrevistas, reuniones grupales, informes de progreso y participación en actividades escolares) que fortalezcan la corresponsabilidad en el proceso educativo y el desarrollo integral de niños de la Primera Infancia.
                     </div>
                     
-                    <!-- Reflexión sobre el indicador -->
                     <div class="reflexion-indicador-box">
                         <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> La formación enfatiza la importancia de la participación de la famila en los procesos de desarrollo. Se esta trabajando con los padres de familia, teniendo ese vinculo afectivo con la escuela. La participación de ellos en asambleas generales, reuniones con pequeños grupos para organizar actividades, presentaciones de los padres dentro del aula con charlas de higiene, cuenta cuentos, también pequeñas actividades en casa, participación en mañana recreativa de primera infancia.
                     </div>
@@ -782,100 +729,115 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
                             <h4>Evidencia 4.1</h4>
                             <p>Clic para expandir documento</p>
                         </div>
-                        <div class="evidencia-item" data-pdf="pdf/evidencia4-2.pdf">
-                            <div class="pdf-preview-container">
-                                <iframe src="pdf/evidencia4-2.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
-                                <div class="pdf-overlay-hover"><i class="fa-solid fa-expand"></i></div>
-                            </div>
-                            <h4>Evidencia 4.2</h4>
-                            <p>Clic para expandir documento</p>
-                        </div>
                     </div>
                 </article>
 
             </div>
         </section>
 
-        <!-- SECCIÓN DE REFLEXIÓN FINAL -->
         <section id="reflexion" class="reflexion-section">
-            <h2 class="section-title">Reflexión Final</h2>
+            <h2 class="section-title">Apartado de Reflexión Final</h2>
             <div class="reflexion-content">
                 <i class="fa-solid fa-quote-left quote-icon"></i>
-                <p><strong>La elaboración de este portafolio fortaleció mi práctica docente en parvularia, permitiéndome comprender la importancia de realizar un diagnóstico oportuno, planificar de manera intencionada, evaluar continuamente los procesos de desarrollo y aprendizaje, y mantener una comunicación constante con las familias. Cada una de estas acciones contribuye a brindar una atención más pertinente a las necesidades e intereses de los niños.
-
-Como docente, reafirmo mi compromiso de continuar promoviendo experiencias de aprendizaje significativas, inclusivas y centradas en el juego, fortaleciendo el trabajo colaborativo con las familias y el equipo docente para favorecer el desarrollo integral de cada niño.</p>
+                <p>El Módulo 5 ha representado un espacio fundamental para consolidar la práctica pedagógica en la Educación Parvularia, articulando las directrices teóricas del nuevo enfoque curricular con la realidad del aula. A través de la elaboración y el análisis minucioso de cada herramienta —desde el diagnóstico inicial continuo hasta el diseño estructurado de planificaciones e instrumentos de evaluación inclusivos— ha quedado demostrada la importancia de concebir al niño como el centro de los procesos de desarrollo y aprendizaje.</p>
+                <br>
+                <p>El vínculo estratégico y empático establecido con las familias ha evidenciado que la corresponsabilidad escolar no es meramente administrativa, sino una red de apoyo imprescindible para potenciar el bienestar integral de la primera infancia en El Salvador. Este portafolio digital condensa un ejercicio crítico y transformador de docencia, enfocado en asegurar una educación lúdica, equitativa, accesible y de alta calidad pedagógica.</p>
             </div>
         </section>
 
     </main>
 
-    
-   <!-- VENTANA MODAL FLOTANTE MULTIMEDIA (PDF E IMÁGENES) -->
- <div class="modal-pdf" id="pdfModal" style="position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; z-index: 99999999 !important;">
-    <div class="modal-content" style="position: relative; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.9); width: 90%; max-width: 950px; height: 85vh; border-radius: 16px; overflow: hidden; z-index: 100000000 !important;">
-        <button class="modal-close" id="closeModal" style="position: absolute; top: 15px; right: 20px; z-index: 100000002 !important;"><i class="fa-solid fa-xmark"></i></button>
-        <iframe class="modal-iframe" id="modalIframe" src="" style="width: 100%; height: 100%; border: none; padding-top: 60px; background-color: #f4f6f9; display: none;"></iframe>
-        <img id="modalImg" src="" style="max-width: 95%; max-height: 80vh; object-fit: contain; display: none; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    <div class="modal-pdf" id="pdfModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+            <iframe class="modal-iframe" id="modalIframe" src=""></iframe>
+            <img id="modalImg" src="" style="max-width: 95%; max-height: 80vh; object-fit: contain; display: none; margin: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        </div>
     </div>
-</div>
 
-    <!-- BOTÓN VOLVER ARRIBA -->
     <a href="#inicio" class="btn-back-to-top" id="backToTop" title="Volver al inicio">
         <i class="fa-solid fa-chevron-up"></i>
     </a>
 
     <footer>
-        <p>&copy; 2026 - Portafolio Académico | Fátima Estefany de Vilanova</p>
+        <p>&copy; 2026 - Portafolio Académico | Desarrollado para Fátima Estefany de Vilanova</p>
     </footer>
 
-    <!-- INTERACCIONES (JAVASCRIPT) -->
     <script>
-            const modal = document.getElementById('pdfModal');
-            const modalIframe = document.getElementById('modalIframe');
-            const modalImg = document.getElementById('modalImg');
-            const closeModalBtn = document.getElementById('closeModal');
-            const evidenciaItems = document.querySelectorAll('.evidencia-item');
-            
-            evidenciaItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    const pdfUrl = item.getAttribute('data-pdf');
-                    const imgUrl = item.getAttribute('data-img');
+        const modal = document.getElementById('pdfModal');
+        const modalIframe = document.getElementById('modalIframe');
+        const modalImg = document.getElementById('modalImg');
+        const closeModalBtn = document.getElementById('closeModal');
+        const evidenciaItems = document.querySelectorAll('.evidencia-item');
+        const footerElement = document.querySelector('footer');
+
+        evidenciaItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const pdfUrl = item.getAttribute('data-pdf');
+                const imgUrl = item.getAttribute('data-img');
+                
+                if (pdfUrl) {
+                    modalIframe.src = pdfUrl;
+                    modalIframe.style.display = 'block';
+                    modalImg.style.display = 'none';
                     
-                    if (pdfUrl) {
-                        modalIframe.src = pdfUrl;
-                        modalIframe.style.display = 'block';
-                        modalImg.style.display = 'none';
-                        
-                        // Activar modal
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden'; // Evita que la página de fondo se mueva
-                    } else if (imgUrl) {
-                        modalImg.src = imgUrl;
-                        modalImg.style.display = 'block';
-                        modalIframe.style.display = 'none';
-                        
-                        // Activar modal
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden'; // Evita que la página de fondo se mueva
-                    }
-                });
-            });
-            
-            const cerrarModal = () => {
-                modal.classList.remove('active');
-                modalIframe.src = ''; 
-                modalImg.src = '';
-                document.body.style.overflow = ''; // Devuelve el scroll normal a la página
-            };
-            
-            closeModalBtn.addEventListener('click', cerrarModal);
-            
-            // Cerrar también si hacen clic en el fondo negro
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    cerrarModal();
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    if (footerElement) footerElement.style.setProperty('display', 'none', 'important');
+                } else if (imgUrl) {
+                    modalImg.src = imgUrl;
+                    modalImg.style.display = 'block';
+                    modalIframe.style.display = 'none';
+                    
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    if (footerElement) footerElement.style.setProperty('display', 'none', 'important');
                 }
             });
+        });
+
+        const cerrarModal = () => {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modalIframe.src = ''; 
+                modalImg.src = '';
+                modalIframe.style.display = 'none';
+                modalImg.style.display = 'none';
+            }, 300);
+            
+            document.body.style.overflow = ''; 
+            if (footerElement) footerElement.style.setProperty('display', 'block', 'important');
+        };
+
+        closeModalBtn.addEventListener('click', cerrarModal);
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) cerrarModal();
+        });
+
+        // Animación suave de aparición al hacer scroll
+        const backToTopButton = document.getElementById('backToTop');
+        const tarjetas = document.querySelectorAll('.seccion-card');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        const aparecerAlScroll = () => {
+            tarjetas.forEach(tarjeta => {
+                const tarjetaTop = tarjeta.getBoundingClientRect().top;
+                if (tarjetaTop < window.innerHeight / 1.2) {
+                    tarjeta.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', aparecerAlScroll);
+        window.addEventListener('load', aparecerAlScroll);
     </script>
 </body>
 </html>
