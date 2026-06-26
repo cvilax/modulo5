@@ -280,6 +280,24 @@
             border: 1px solid #cbd5e1;
         }
 
+        /* --- CONFIGURACIÓN DE IMÁGENES EN LAS EVIDENCIAS --- */
+        .img-preview {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hace que la foto llene el recuadro perfectamente sin deformarse */
+            border-radius: 8px;
+        }
+
+        /* Ajuste para que la imagen en el modal se vea gigante y centrada */
+        .modal-img-content {
+            max-width: 100%;
+            max-height: 80vh;
+            display: none;
+            margin: auto;
+            object-fit: contain;
+            padding-top: 20px;
+        }
+
         .pdf-preview-container iframe {
             width: 100%;
             height: 100%;
@@ -506,7 +524,7 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
         
         <!-- SECCIÓN DE EVIDENCIAS -->
         <section id="secciones">
-            <h2 class="section-title">Secciones del Módulo</h2>
+            <h2 class="section-title">Secciones del Módulo: Indicadores y evidencias</h2>
             
             <div class="secciones-grid">
                 
@@ -514,17 +532,17 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
                 <article class="seccion-card">
                     <div class="seccion-header">
                         <i class="fa-solid fa-book-open-reader"></i>
-                        <h3>Sección 1: [Nombre de la Sección 1]</h3>
+                        <h3>Indicador 1</h3>
                     </div>
                     
                     <!-- Indicador -->
                     <div class="indicador-box">
-                        <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong> [Pega aquí el indicador de logro correspondiente a la primera sección].
+                        <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong> 1.1. Elaborar y utilizar el expediente de los niños, realizando un diagnóstico inicial que caracteriza, con base en sus particularidades: intereses, capacidades y contextos, empleando herramientas y estrategias accesibles y equitativas para fundamentar la planificación de experiencias pedagógicas que promuevan el desarrollo y aprendizaje de todos los niños, en colaboración con las familias y el equipo docente.
                     </div>
                     
                     <!-- Reflexión sobre el indicador -->
                     <div class="reflexion-indicador-box">
-                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> [Pega aquí el análisis o reflexión específica sobre cómo se cumplió este indicador de logro].
+                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> 1En este modulo aprendí a consolidar muchos aspectos, como lo es el diagnostico al inicio de año para comprender como entran los niños al nivel escolar en este caso su primera vez. La caracterización individual y grupal que se realiza al inicio para reconocer al grupo y a cada niño, debe ser continua, esto me permitió desarrollar actividades en las 2 semanas de adaptación, mi punto de partida para poder realizar los procesos de desarrollo, las estrategias, recursos. Todos esos documentos me han servido para crear el expediente de cada estudiante con información relevante como la ficha de matricula, cartilla de vacunación,  Dui de responsables, contexto familiar.
                     </div>
                     
                     <div class="evidencias-container">
@@ -536,14 +554,40 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
                             <h4>Evidencia 1.1</h4>
                             <p>Clic para expandir documento</p>
                         </div>
-                        <div class="evidencia-item" data-pdf="pdf/evidencia1-2.pdf">
-                            <div class="pdf-preview-container">
-                                <iframe src="pdf/evidencia1-2.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
-                                <div class="pdf-overlay-hover"><i class="fa-solid fa-expand"></i></div>
-                            </div>
-                            <h4>Evidencia 1.2</h4>
-                            <p>Clic para expandir documento</p>
-                        </div>
+                 <!-- CONTENEDOR DE 3 FOTOGRAFÍAS PARA LA EVIDENCIA 1.2 -->
+<div class="evidencias-container" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 1.5rem; width: 100%;">
+    
+    <!-- Foto 1 -->
+    <div class="evidencia-item item-galeria" data-img="img/actividad1.jpg">
+        <div class="pdf-preview-container">
+            <img src="img/actividad1.jpg" alt="Actividad de Parvularia 1" class="img-preview">
+            <div class="pdf-overlay-hover"><i class="fa-solid fa-camera-retro"></i></div>
+        </div>
+        <h4>Evidencia 1.2 - Foto 1</h4>
+        <p>Clic para ampliar fotografía</p>
+    </div>
+
+    <!-- Foto 2 -->
+    <div class="evidencia-item item-galeria" data-img="img/actividad2.jpg">
+        <div class="pdf-preview-container">
+            <img src="img/actividad2.jpg" alt="Actividad de Parvularia 2" class="img-preview">
+            <div class="pdf-overlay-hover"><i class="fa-solid fa-camera-retro"></i></div>
+        </div>
+        <h4>Evidencia 1.2 - Foto 2</h4>
+        <p>Clic para ampliar fotografía</p>
+    </div>
+
+    <!-- Foto 3 -->
+    <div class="evidencia-item item-galeria" data-img="img/actividad3.jpg">
+        <div class="pdf-preview-container">
+            <img src="img/actividad3.jpg" alt="Actividad de Parvularia 3" class="img-preview">
+            <div class="pdf-overlay-hover"><i class="fa-solid fa-camera-retro"></i></div>
+        </div>
+        <h4>Evidencia 1.2 - Foto 3</h4>
+        <p>Clic para ampliar fotografía</p>
+    </div>
+
+</div>
                     </div>
                 </article>
 
@@ -551,7 +595,7 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
                 <article class="seccion-card">
                     <div class="seccion-header">
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        <h3>Sección 2: [Nombre de la Sección 2]</h3>
+                        <h3>Indicador 2:</h3>
                     </div>
                     
                     <!-- Indicador -->
@@ -672,13 +716,16 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
 
     </main>
 
-    <!-- VENTANA MODAL FLOTANTE PARA PDF -->
+    
+   <!-- VENTANA MODAL FLOTANTE MULTIMEDIA (PDF E IMÁGENES) -->
     <div class="modal-pdf" id="pdfModal">
-        <div class="modal-content">
-            <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
-            <iframe class="modal-iframe" id="modalIframe" src=""></iframe>
-        </div>
-    </div>
+    <div class="modal-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+        <!-- Visor para cuando sea PDF -->
+        <iframe class="modal-iframe" id="modalIframe" src="" style="width:100%; height:100%;"></iframe>
+        <!-- Visor para cuando sea Imagen -->
+        <img class="modal-img-content" id="modalImg" src="" alt="Evidencia ampliada">
+    </div
 
     <!-- BOTÓN VOLVER ARRIBA -->
     <a href="#inicio" class="btn-back-to-top" id="backToTop" title="Volver al inicio">
@@ -691,53 +738,69 @@ Asimismo, se evidencian las estrategias de comunicación y colaboración permane
 
     <!-- INTERACCIONES (JAVASCRIPT) -->
     <script>
-        const modal = document.getElementById('pdfModal');
-        const modalIframe = document.getElementById('modalIframe');
-        const closeModalBtn = document.getElementById('closeModal');
-        const evidenciaItems = document.querySelectorAll('.evidencia-item');
+      const modal = document.getElementById('pdfModal');
+const modalIframe = document.getElementById('modalIframe');
+const modalImg = document.getElementById('modalImg');
+const closeModalBtn = document.getElementById('closeModal');
+const evidenciaItems = document.querySelectorAll('.evidencia-item');
 
-        evidenciaItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const pdfUrl = item.getAttribute('data-pdf');
-                modalIframe.src = pdfUrl; 
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; 
-            });
-        });
+evidenciaItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const pdfUrl = item.getAttribute('data-pdf');
+        const imgUrl = item.getAttribute('data-img');
+        
+        if (pdfUrl) {
+            // Si tiene PDF, muestra el iframe y oculta la imagen
+            modalImg.style.display = 'none';
+            modalIframe.style.display = 'block';
+            modalIframe.src = pdfUrl;
+        } else if (imgUrl) {
+            // Si tiene Imagen, muestra la imagen y oculta el iframe
+            modalIframe.style.display = 'none';
+            modalIframe.src = '';
+            modalImg.style.display = 'block';
+            modalImg.src = imgUrl;
+        }
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+    });
+});
 
-        const cerrarModal = () => {
-            modal.classList.remove('active');
-            modalIframe.src = ''; 
-            document.body.style.overflow = ''; 
-        };
+const cerrarModal = () => {
+    modal.classList.remove('active');
+    modalIframe.src = ''; 
+    modalImg.src = '';
+    document.body.style.overflow = ''; 
+};
 
-        closeModalBtn.addEventListener('click', cerrarModal);
-        modal.addEventListener('click', (e) => {
-            if(e.target === modal) cerrarModal();
-        });
+closeModalBtn.addEventListener('click', cerrarModal);
+modal.addEventListener('click', (e) => {
+    if(e.target === modal) cerrarModal();
+});
 
-        const backToTopButton = document.getElementById('backToTop');
-        const tarjetas = document.querySelectorAll('.seccion-card');
+const backToTopButton = document.getElementById('backToTop');
+const tarjetas = document.querySelectorAll('.seccion-card');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});
 
-        const aparecerAlScroll = () => {
-            tarjetas.forEach(tarjeta => {
-                const tarjetaTop = tarjeta.getBoundingClientRect().top;
-                if (tarjetaTop < window.innerHeight / 1.2) {
-                    tarjeta.classList.add('visible');
-                }
-            });
-        };
+const aparecerAlScroll = () => {
+    tarjetas.forEach(tarjeta => {
+        const tarjetaTop = tarjeta.getBoundingClientRect().top;
+        if (tarjetaTop < window.innerHeight / 1.2) {
+            tarjeta.classList.add('visible');
+        }
+    });
+};
 
-        window.addEventListener('scroll', aparecerAlScroll);
-        window.addEventListener('load', aparecerAlScroll);
+window.addEventListener('scroll', aparecerAlScroll);
+window.addEventListener('load', aparecerAlScroll);
     </script>
 </body>
 </html>
