@@ -1,188 +1,740 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio | Módulo 5</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Final - Fátima Estefany de Vilanova</title>
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- VARIABLES Y CONFIGURACIÓN GENERAL (ESTILO PASTEL) --- */
+        :root {
+            --primary-color: #7b9acc; 
+            --secondary-color: #bfa5e6; 
+            --accent-color: #ffcad4; 
+            --text-dark: #4a5157; 
+            --text-light: #ffffff;
+            --bg-light: #f4f6f9; 
+            --card-bg: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- BARRA DE NAVEGACIÓN --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 2px 15px rgba(123, 154, 204, 0.1);
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+            background-color: rgba(123, 154, 204, 0.1);
+        }
+
+        /* --- SECCIÓN HERO --- */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #bfa5e6 0%, #7b9acc 50%, #ffcad4 100%);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            padding-top: 100px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.5rem 2rem;
+            border-radius: 30px;
+            animation: fadeInDown 1s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* Bloque de Introducción Breve */
+        .hero-introduction {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            max-width: 750px;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            text-align: justify;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn-start {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .btn-start:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- CONTENEDOR DE SECCIONES --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem 2rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 5px;
+            background: var(--secondary-color);
+            margin: 0.6rem auto 0 auto;
+            border-radius: 10px;
+        }
+
+        .secciones-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .seccion-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(123, 154, 204, 0.08);
+            transition: var(--transition);
+            border-left: 6px solid var(--primary-color);
+            opacity: 0; 
+            transform: translateY(20px);
+        }
+
+        .seccion-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .seccion-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .seccion-header i {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+
+        .seccion-header h3 {
+            font-size: 1.6rem;
+            color: var(--text-dark);
+        }
+
+        /* Bloque del Indicador */
+        .indicador-box {
+            background-color: #f7f4fc; 
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        /* Nuevo Bloque de Reflexión Corta por Indicador */
+        .reflexion-indicador-box {
+            background-color: #fffaf0; /* Tono cálido pastel muy suave */
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #fbd38d; /* Naranja pastel suave para diferenciarlo */
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .evidencias-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Tarjeta Interactiva del PDF */
+        .evidencia-item {
+            border: 2px dashed #e2e8f0;
+            border-radius: 14px;
+            padding: 1.2rem;
+            text-align: center;
+            background-color: #fafbfc;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .evidencia-item:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(123, 154, 204, 0.04);
+            transform: translateY(-4px);
+        }
+
+        .pdf-preview-container {
+            width: 100%;
+            height: 150px;
+            background-color: #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #cbd5e1;
+        }
+
+        .pdf-preview-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+
+        .pdf-overlay-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(74, 81, 87, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .evidencia-item:hover .pdf-overlay-hover {
+            opacity: 1;
+            background-color: rgba(123, 154, 204, 0.6);
+        }
+
+        .evidencia-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .evidencia-item p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* --- SECCIÓN REFLEXIÓN FINAL --- */
+        .reflexion-section {
+            background: #fff0f2; 
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 25px rgba(255, 202, 212, 0.15);
+            margin-top: 5rem;
+            border-top: 6px solid var(--accent-color);
+        }
+
+        .reflexion-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .quote-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* --- VENTANA FLOTANTE / MODAL --- */
+        .modal-pdf {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-pdf.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 950px;
+            height: 85vh;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .modal-pdf.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: #4a5157;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background-color: #ffb3c1;
+            transform: rotate(90deg);
+        }
+
+        .modal-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding-top: 60px; 
+            background-color: #f4f6f9;
+        }
+
+        /* --- BOTÓN VOLVER ARRIBA --- */
+        .btn-back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(191, 165, 230, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .btn-back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #e6ecf5; 
+            color: #74808c;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 6rem;
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 1rem; }
+            .hero-title { font-size: 2.4rem; }
+            .container { padding-top: 130px; }
+            .modal-content { height: 75vh; }
+        }
+    </style>
 </head>
 <body>
 
-<div id="progress-bar"></div>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header>
+        <nav class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-feather-pointed"></i> Portafolio Digital
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#secciones">Evidencias</a></li>
+                <li><a href="#reflexion">Reflexión</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<nav class="navbar">
- <div class="logo">Portafolio</div>
- <ul>
-  <li><a href="#inicio">Inicio</a></li>
-  <li><a href="#introduccion">Introducción</a></li>
-  <li><a href="#indicadores">Indicadores</a></li>
- </ul>
-</nav>
+    <!-- SECCIÓN HERO -->
+    <section id="inicio" class="hero">
+        <span class="hero-subtitle">Módulo 5</span>
+        <h1 class="hero-title">Fátima Estefany de Vilanova</h1>
+        <p class="hero-tagline">Presentación de evidencias de desarrollo, indicadores de logro y reflexión del aprendizaje del módulo.</p>
+        
+        <!-- ESPACIO DE INTRODUCCIÓN BREVE -->
+        <div class="hero-introduction">
+            <strong>Introducción:</strong> [Aquí puedes escribir o pegar una breve introducción general sobre los objetivos del Módulo 5, los temas clave abordados y la importancia de este portafolio en el proceso de aprendizaje].
+        </div>
+        
+        <a href="#secciones" class="btn-start">Explorar Portafolio <i class="fa-solid fa-heart" style="margin-left: 8px; color: var(--accent-color);"></i></a>
+    </section>
 
-<header id="inicio" class="hero">
-<div class="hero-overlay">
-<div class="hero-content">
-<i class="fas fa-book-open hero-icon"></i>
-<h1>Portafolio</h1>
-<h2>Módulo 5</h2>
-<h3>Fátima Estefany de Vilanova</h3>
-<p>Ministerio de Educación, Ciencia y Tecnología</p>
-<a href="#introduccion" class="btn">Explorar <i class="fas fa-arrow-down"></i></a>
-</div>
-</div>
-</header>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container">
+        
+        <!-- SECCIÓN DE EVIDENCIAS -->
+        <section id="secciones">
+            <h2 class="section-title">Secciones del Módulo</h2>
+            
+            <div class="secciones-grid">
+                
+                <!-- SECCIÓN 1 -->
+                <article class="seccion-card">
+                    <div class="seccion-header">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <h3>Sección 1: [Nombre de la Sección 1]</h3>
+                    </div>
+                    
+                    <!-- Indicador -->
+                    <div class="indicador-box">
+                        <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong> [Pega aquí el indicador de logro correspondiente a la primera sección].
+                    </div>
+                    
+                    <!-- Reflexión sobre el indicador -->
+                    <div class="reflexion-indicador-box">
+                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> [Pega aquí el análisis o reflexión específica sobre cómo se cumplió este indicador de logro].
+                    </div>
+                    
+                    <div class="evidencias-container">
+                        <div class="evidencia-item" data-pdf="pdf/evidencia1-1.pdf">
+                            <div class="pdf-preview-container">
+                                <iframe src="pdf/evidencia1-1.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+                                <div class="pdf-overlay-hover"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <h4>Evidencia 1.1</h4>
+                            <p>Clic para expandir documento</p>
+                        </div>
+                        <div class="evidencia-item" data-pdf="pdf/evidencia1-2.pdf">
+                            <div class="pdf-preview-container">
+                                <iframe src="pdf/evidencia1-2.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+                                <div class="pdf-overlay-hover"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <h4>Evidencia 1.2</h4>
+                            <p>Clic para expandir documento</p>
+                        </div>
+                    </div>
+                </article>
 
-<section id="introduccion" class="section">
-<h2><i class="fas fa-seedling"></i> Introducción</h2>
-<div class="icons">
-<i class="fas fa-child-reaching"></i>
-<i class="fas fa-puzzle-piece"></i>
-<i class="fas fa-book"></i>
-<i class="fas fa-pencil"></i>
-<i class="fas fa-star"></i>
-</div>
-<p>Espacio reservado para la introducción del portafolio.</p>
-</section>
+                <!-- SECCIÓN 2 -->
+                <article class="seccion-card">
+                    <div class="seccion-header">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <h3>Sección 2: [Nombre de la Sección 2]</h3>
+                    </div>
+                    
+                    <!-- Indicador -->
+                    <div class="indicador-box">
+                        <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong> [Pega aquí el indicador de logro correspondiente a la segunda sección].
+                    </div>
+                    
+                    <!-- Reflexión sobre el indicador -->
+                    <div class="reflexion-indicador-box">
+                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> [Pega aquí el análisis o reflexión específica sobre cómo se cumplió este indicador de logro].
+                    </div>
+                    
+                    <div class="evidencias-container">
+                        <div class="evidencia-item" data-pdf="pdf/evidencia2-1.pdf">
+                            <div class="pdf-preview-container">
+                                <iframe src="pdf/evidencia2-1.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+                                <div class="pdf-overlay-hover"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <h4>Evidencia 2.1</h4>
+                            <p>Clic para expandir documento</p>
+                        </div>
+                        <div class="evidencia-item" data-pdf="pdf/evidencia2-2.pdf">
+                            <div class="pdf-preview-container">
+                                <iframe src="pdf/evidencia2-2.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+                                <div class="pdf-overlay-hover"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <h4>Evidencia 2.2</h4>
+                            <p>Clic para expandir documento</p>
+                        </div>
+                    </div>
+                </article>
 
-<section id="indicadores" class="section">
-<h2>Indicadores</h2>
-<div class="timeline">
+                <!-- SECCIÓN 3 -->
+                <article class="seccion-card">
+                    <div class="seccion-header">
+                        <i class="fa-solid fa-palette"></i>
+                        <h3>Sección 3: [Nombre de la Sección 3]</h3>
+                    </div>
+                    
+                    <!-- Indicador -->
+                    <div class="indicador-box">
+                        <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong> [Pega aquí el indicador de logro correspondiente a la tercera sección].
+                    </div>
+                    
+                    <!-- Reflexión sobre el indicador -->
+                    <div class="reflexion-indicador-box">
+                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> [Pega aquí el análisis o reflexión específica sobre cómo se cumplió este indicador de logro].
+                    </div>
+                    
+                    <div class="evidencias-container">
+                        <div class="evidencia-item" data-pdf="pdf/evidencia3-1.pdf">
+                            <div class="pdf-preview-container">
+                                <iframe src="pdf/evidencia3-1.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+                                <div class="pdf-overlay-hover"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <h4>Evidencia 3.1</h4>
+                            <p>Clic para expandir documento</p>
+                        </div>
+                        <div class="evidencia-item" data-pdf="pdf/evidencia3-2.pdf">
+                            <div class="pdf-preview-container">
+                                <iframe src="pdf/evidencia3-2.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+                                <div class="pdf-overlay-hover"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <h4>Evidencia 3.2</h4>
+                            <p>Clic para expandir documento</p>
+                        </div>
+                    </div>
+                </article>
 
-<article class="card indicador">
-<div class="badge">Indicador 1</div>
-<h3>Título del Indicador 1</h3>
-<p>Descripción breve del indicador.</p>
+                <!-- SECCIÓN 4 -->
+                <article class="seccion-card">
+                    <div class="seccion-header">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h3>Sección 4: [Nombre de la Sección 4]</h3>
+                    </div>
+                    
+                    <!-- Indicador -->
+                    <div class="indicador-box">
+                        <strong><i class="fa-solid fa-sparkles"></i> Indicador de logro:</strong> [Pega aquí el indicador de logro correspondiente a la cuarta sección].
+                    </div>
+                    
+                    <!-- Reflexión sobre el indicador -->
+                    <div class="reflexion-indicador-box">
+                        <strong><i class="fa-solid fa-comment-nodes"></i> Reflexión sobre el indicador:</strong> [Pega aquí el análisis o reflexión específica sobre cómo se cumplió este indicador de logro].
+                    </div>
+                    
+                    <div class="evidencias-container">
+                        <div class="evidencia-item" data-pdf="pdf/evidencia4-1.pdf">
+                            <div class="pdf-preview-container">
+                                <iframe src="pdf/evidencia4-1.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+                                <div class="pdf-overlay-hover"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <h4>Evidencia 4.1</h4>
+                            <p>Clic para expandir documento</p>
+                        </div>
+                        <div class="evidencia-item" data-pdf="pdf/evidencia4-2.pdf">
+                            <div class="pdf-preview-container">
+                                <iframe src="pdf/evidencia4-2.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+                                <div class="pdf-overlay-hover"><i class="fa-solid fa-expand"></i></div>
+                            </div>
+                            <h4>Evidencia 4.2</h4>
+                            <p>Clic para expandir documento</p>
+                        </div>
+                    </div>
+                </article>
 
-<details open>
-<summary><i class="fas fa-lightbulb"></i> Reflexión</summary>
-<p>Espacio para la reflexión.</p>
-</details>
+            </div>
+        </section>
 
-<details>
-<summary><i class="fas fa-images"></i> Fotografías</summary>
-<div class="gallery">
-<div class="ph">Foto 1</div>
-<div class="ph">Foto 2</div>
-<div class="ph">Foto 3</div>
-</div>
-</details>
+        <!-- SECCIÓN DE REFLEXIÓN FINAL -->
+        <section id="reflexion" class="reflexion-section">
+            <h2 class="section-title">Apartado de Reflexión Final</h2>
+            <div class="reflexion-content">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p><strong>[Aquí puedes escribir o pegar la gran reflexión final que engloba todo el módulo]</strong>. Análisis profundo sobre las competencias construidas, los retos principales del módulo y las conclusiones pedagógicas obtenidas.</p>
+            </div>
+        </section>
 
-<details>
-<summary><i class="fas fa-file-pdf"></i> Documentos PDF</summary>
-<div class="pdf-actions">
-<a href="assets/pdf/documento1.pdf" target="_blank">👁 Ver PDF</a>
-<a href="assets/pdf/documento1.pdf" download>⬇ Descargar</a>
-</div>
-</details>
+    </main>
 
-</article>
+    <!-- VENTANA MODAL FLOTANTE PARA PDF -->
+    <div class="modal-pdf" id="pdfModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+            <iframe class="modal-iframe" id="modalIframe" src=""></iframe>
+        </div>
+    </div>
 
-<article class="card indicador">
-<div class="badge">Indicador 2</div>
-<h3>Título del Indicador 2</h3>
-<p>Descripción breve del indicador.</p>
+    <!-- BOTÓN VOLVER ARRIBA -->
+    <a href="#inicio" class="btn-back-to-top" id="backToTop" title="Volver al inicio">
+        <i class="fa-solid fa-chevron-up"></i>
+    </a>
 
-<details open>
-<summary><i class="fas fa-lightbulb"></i> Reflexión</summary>
-<p>Espacio para la reflexión.</p>
-</details>
+    <footer>
+        <p>&copy; 2026 - Portafolio Académico | Fátima Estefany de Vilanova</p>
+    </footer>
 
-<details>
-<summary><i class="fas fa-images"></i> Fotografías</summary>
-<div class="gallery">
-<div class="ph">Foto 1</div>
-<div class="ph">Foto 2</div>
-<div class="ph">Foto 3</div>
-</div>
-</details>
+    <!-- INTERACCIONES (JAVASCRIPT) -->
+    <script>
+        const modal = document.getElementById('pdfModal');
+        const modalIframe = document.getElementById('modalIframe');
+        const closeModalBtn = document.getElementById('closeModal');
+        const evidenciaItems = document.querySelectorAll('.evidencia-item');
 
-<details>
-<summary><i class="fas fa-file-pdf"></i> Documentos PDF</summary>
-<div class="pdf-actions">
-<a href="assets/pdf/documento2.pdf" target="_blank">👁 Ver PDF</a>
-<a href="assets/pdf/documento2.pdf" download>⬇ Descargar</a>
-</div>
-</details>
+        evidenciaItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const pdfUrl = item.getAttribute('data-pdf');
+                modalIframe.src = pdfUrl; 
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            });
+        });
 
-</article>
+        const cerrarModal = () => {
+            modal.classList.remove('active');
+            modalIframe.src = ''; 
+            document.body.style.overflow = ''; 
+        };
 
-<article class="card indicador">
-<div class="badge">Indicador 3</div>
-<h3>Título del Indicador 3</h3>
-<p>Descripción breve del indicador.</p>
+        closeModalBtn.addEventListener('click', cerrarModal);
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) cerrarModal();
+        });
 
-<details open>
-<summary><i class="fas fa-lightbulb"></i> Reflexión</summary>
-<p>Espacio para la reflexión.</p>
-</details>
+        const backToTopButton = document.getElementById('backToTop');
+        const tarjetas = document.querySelectorAll('.seccion-card');
 
-<details>
-<summary><i class="fas fa-images"></i> Fotografías</summary>
-<div class="gallery">
-<div class="ph">Foto 1</div>
-<div class="ph">Foto 2</div>
-<div class="ph">Foto 3</div>
-</div>
-</details>
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
 
-<details>
-<summary><i class="fas fa-file-pdf"></i> Documentos PDF</summary>
-<div class="pdf-actions">
-<a href="assets/pdf/documento3.pdf" target="_blank">👁 Ver PDF</a>
-<a href="assets/pdf/documento3.pdf" download>⬇ Descargar</a>
-</div>
-</details>
+        const aparecerAlScroll = () => {
+            tarjetas.forEach(tarjeta => {
+                const tarjetaTop = tarjeta.getBoundingClientRect().top;
+                if (tarjetaTop < window.innerHeight / 1.2) {
+                    tarjeta.classList.add('visible');
+                }
+            });
+        };
 
-</article>
-
-<article class="card indicador">
-<div class="badge">Indicador 4</div>
-<h3>Título del Indicador 4</h3>
-<p>Descripción breve del indicador.</p>
-
-<details open>
-<summary><i class="fas fa-lightbulb"></i> Reflexión</summary>
-<p>Espacio para la reflexión.</p>
-</details>
-
-<details>
-<summary><i class="fas fa-images"></i> Fotografías</summary>
-<div class="gallery">
-<div class="ph">Foto 1</div>
-<div class="ph">Foto 2</div>
-<div class="ph">Foto 3</div>
-</div>
-</details>
-
-<details>
-<summary><i class="fas fa-file-pdf"></i> Documentos PDF</summary>
-<div class="pdf-actions">
-<a href="assets/pdf/documento4.pdf" target="_blank">👁 Ver PDF</a>
-<a href="assets/pdf/documento4.pdf" download>⬇ Descargar</a>
-</div>
-</details>
-
-</article>
-
-</div>
-</section>
-
-<section class="section">
-<h2><i class="fas fa-video"></i> Evidencia en Video</h2>
-<video controls width="100%">
-<source src="assets/video/evidencia.mp4" type="video/mp4">
-</video>
-</section>
-
-<footer>
-<p>© 2026 Portafolio Digital | Fátima Estefany de Vilanova</p>
-</footer>
-
-<button id="topBtn"><i class="fas fa-arrow-up"></i></button>
-<script src="js/app.js"></script>
+        window.addEventListener('scroll', aparecerAlScroll);
+        window.addEventListener('load', aparecerAlScroll);
+    </script>
 </body>
 </html>
